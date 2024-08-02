@@ -6,14 +6,14 @@ class TempConverterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Temperature Converter',
+      title: 'Convertisseur de temperature',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
-        scaffoldBackgroundColor: Colors.teal.shade50,
+        primarySwatch: Colors.pink,
+        scaffoldBackgroundColor: Colors.pink.shade50,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.teal, // Background color
+            backgroundColor: Colors.pink, // Background color
             foregroundColor: Colors.white, // Text color
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0), // Rounded corners
@@ -22,7 +22,7 @@ class TempConverterApp extends StatelessWidget {
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            foregroundColor: Colors.teal, // Text color
+            foregroundColor: Colors.pink, // Text color
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0), // Rounded corners
             ),
@@ -41,7 +41,7 @@ class TempConverterHomePage extends StatefulWidget {
 
 class _TempConverterHomePageState extends State<TempConverterHomePage> {
   final TextEditingController _controller = TextEditingController();
-  String _selectedConversion = 'F to C';
+  String _selectedConversion = 'F en C';
   String _result = '';
   List<String> _history = [];
 
@@ -50,7 +50,7 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
     double convertedTemp;
     String unit;
 
-    if (_selectedConversion == 'F to C') {
+    if (_selectedConversion == 'F en C') {
       convertedTemp = (inputTemp - 32) * 5 / 9;
       unit = '°C';
     } else {
@@ -69,7 +69,7 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Conversion History'),
+          title: Text('Historique de conversion'),
           content: Container(
             width: double.maxFinite,
             child: ListView.builder(
@@ -84,7 +84,7 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Close'),
+              child: Text('Fermez'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -99,7 +99,7 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Temperature Converter'),
+        title: Text('Convertisseur de temperature '),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -113,7 +113,7 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
                   controller: _controller,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Enter Temperature',
+                    labelText: 'Entrez la Temperature',
                     fillColor: Colors.white,
                     filled: true,
                     border: OutlineInputBorder(
@@ -134,7 +134,7 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
                         });
                       },
                     ),
-                    Text('F to C'),
+                    Text('F en C'),
                     Radio<String>(
                       value: 'C to F',
                       groupValue: _selectedConversion,
@@ -144,12 +144,12 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
                         });
                       },
                     ),
-                    Text('C to F'),
+                    Text('C en F'),
                   ],
                 ),
                 ElevatedButton(
                   onPressed: _convertTemperature,
-                  child: Text('Convert'),
+                  child: Text('Convertie'),
                 ),
                 SizedBox(height: 20),
                 Text(
@@ -159,7 +159,7 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: _showHistory,
-                  child: Text('Show History'),
+                  child: Text('Voir historique'),
                 ),
               ],
             ),
@@ -169,5 +169,3 @@ class _TempConverterHomePageState extends State<TempConverterHomePage> {
     );
   }
 }
-
-
