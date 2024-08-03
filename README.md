@@ -6,6 +6,10 @@ A Flutter application designed to convert temperatures between Fahrenheit and Ce
 
 ConversionApp is a simple yet elegant temperature converter built with Flutter. This app allows users to easily switch between Fahrenheit and Celsius conversions and view their conversion history. The app features a modern, girly color scheme with harmonious pink and black tones, making it visually appealing.
 
+## Preswntation links 
+ Presenttion Video : https://www.loom.com/share/f120add639a342d0b97ebf068ee2f18c?sid=c4ae992c-b467-4667-af45-96887f3b9de3
+ Presentation documents : https://docs.google.com/document/d/15WfC-4iqVHcBz7fYB9Y0-8-ESnWU2-KxIgOlYxqAdfE/edit?usp=sharing
+
 ## Features
 
 - **Temperature Conversion**: Convert temperatures between Fahrenheit and Celsius with a single button press.
